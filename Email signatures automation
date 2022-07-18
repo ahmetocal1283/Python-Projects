@@ -1,0 +1,429 @@
+import webbrowser
+
+name_and_surname = input("Type Your Name and Surname: ")
+position = input("Enter your position at WhitePress: ")
+telno = input("Enter your phone number: ")
+email = input("Enter your Email: ")
+language = input("| 1-Polski | 2-English | 3-German | 4-Czech |"
+                 "\n| 5-Romanian | 6-Dutch | 7-Spanish | 8-Turkish |"
+                 "\n| 9-French | 10-Hungarian | 11-Italian | 12-Ukrainian |"
+                 "\n| 13-Slovak | 14-Bulgarian | 15-Lithuanian | 16-Croatian |"
+                 "\n| 17-Portuguese | 18-Danish | 19-Swedish | 20-Latvian |"
+                 "\n| 21-Greek | 22-Estonian | 23-Slovenian | 24-English(slovania address)"
+                 "\n| 25-English(poland address)|"
+                 "\nPlease type the number of your language according to which market you work in:")
+greet = ""
+domain = ""
+operate = ""
+adress = ""
+policy = ""
+while (True):
+    if language == "1":
+        greet = "Pozdrawiam"
+        http_domain = '"https://www.whitepress.pl/"'
+        domain = "whitepress.pl"
+        operate = "Działamy w"
+        adress = """<br><b>WhitePress sp. z o.o.</b><br>
+        43-300 Bielsko-Biala<br>
+        ul. Legionow 26/28<br>
+        Poland<br>
+        NIP: 937-266-77-97<br>"""
+        policy = """Niniejsza wiadomość może zawierać informacje poufne i/lub kierowane tylko do określonego adresata i jest przeznaczona wyłącznie do użytku podmiotu lub osoby, do której jest adresowana. Jeżeli nie jesteś zamierzonym adresatem powyższej wiadomości, nie możesz jej ujawniać, kopiować, dystrybuować, ani też w żaden inny sposób udostępniać lub wykorzystywać.
+    O błędnym zaadresowaniu wiadomości prosimy niezwłocznie poinformować nadawcę i usunąć wiadomość. Nadawca nie jest odpowiedzialny za jakiekolwiek błędy lub zniekształcenia w niniejszej wiadomości, wynikające z możliwego przechwycenia, uszkodzenia, zgubienia, zniszczenia danych, opóźnień lub niepełnej transmisji oraz obecności wirusów. W razie jakichkolwiek wątpliwości, prosimy o kontakt z nadawcą.
+    Dane osobowe zawarte w niniejszej korespondencji przetwarzane są przez WhitePress sp. z o.o. z siedzibą w Bielsku – Białej,
+    ul. Legionów 26/28, 43-300 Bielsko – Biała. Dane osobowe przetwarzane są zgodnie z Polityką Prywatności, dostępną pod adresem: https://www.whitepress.pl/polityka-prywatnosci.
+    """
+        break
+    elif language == "2":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com/en"'
+        domain = "whitepress.com/en"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress Publishing LTD</b><br>
+        590 Kingston Road<br>
+        SW20 8DN London<br>
+        England<br>
+        NBRN: 12339845<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy."""
+        break
+    elif language == "3":
+        greet = "Mit freundlichen Grüßen"
+        http_domain = '"https://www.whitepress.com/de"'
+        domain = "whitepress.com/de"
+        operate = "Wir arbeiten in:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynská 27<br>
+        040 01 Košice<br>
+        Slovakia<br>
+        USt-IdNr.: SK2121022321<br>"""
+        policy = """Diese E-Mail kann vertrauliche und/oder nur an einen bestimmten Adressaten gerichtete Informationen enthalten und ist ausschließlich für die Verwendung durch die Einrichtung oder Person bestimmt, an die sie gerichtet ist. Falls Sie nicht der vorgesehene Empfänger der oben genannten Nachricht sind, dürfen Sie diese nicht offenlegen, kopieren, verbreiten oder anderweitig zugänglich machen oder verwenden.
+    Melden Sie bitte dem Absender eine falsch adressierte Nachricht sofort und löschen Sie die Nachricht. Für eventuelle Fehler oder Verzerrungen in dieser Nachricht, die durch mögliches Abfangen, Beschädigung, Verlust, Zerstörung von Daten, Verzögerungen oder unvollständige Übertragung und das Vorhandensein von Viren entstehen, ist der Absender nicht verantwortlich. Im Zweifel wenden Sie sich bitte an den Absender.
+    Die in dieser Korrespondenz genannten personenbezogenen Daten werden von WhitePress Sp. z o.o. mit Sitz in Legionów 26/28, 43-300 Bielsko-Biała verarbeitet. Personenbezogene Daten werden in Übereinstimmung mit den Datenschutzbestimmungen verarbeitet, die unter folgender Adresse abrufbar sind: https://www.whitepress.com/de/privacy-policy."""
+        break
+    elif language == "4":
+        greet = "S pozdravem"
+        http_domain = '"https://www.whitepress.com/cz"'
+        domain = "whitepress.com/cz"
+        operate = "Působíme v:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Dolní Marklovice 392<br>
+        735 72 Petrovice u Karviné<br>
+        Česká republika<br>
+        DIČ: CZ08280461<br>"""
+        policy = """Tato zpráva může obsahovat informace, které jsou důvěrné a/nebo určené pouze konkrétnímu adresátovi a jsou určeny výlučně pro potřeby subjektu nebo osoby, které jsou určeny. Pokud nejste adresátem uvedené zprávy, nesmíte ji zveřejňovat, kopírovat, distribuovat ani jinak sdílet či používat. O jakékoli nesprávně adresované zprávě okamžitě informujte odesílatele a zprávu vymažte.
+    Odesílatel neodpovídá za žádné chyby nebo zkreslení v této zprávě, které jsou důsledkem možného zachycení, poškození, ztráty, zničení údajů, opožděného nebo neúplného přenosu a přítomnosti virů. V případě jakýchkoli pochybností se obraťte na odesílatele.
+    Osobní údaje obsažené v této korespondenci zpracovává společnost WhitePress s.r.o., jejíž sídlo je Dolní Marklovice 392 735 72 Petrovice u Karviné, Česká republika. Osobní údaje se zpracovávají v souladu se Zásadami ochrany osobních údajů, které jsou k dispozici na: https://www.whitepress.com/privacy-policy.
+    """
+        break
+
+    elif language == "5":
+        greet = "Cu stimă"
+        http_domain = '"https://www.whitepress.com/ro"'
+        domain = "whitepress.com/ro"
+        operate = "Suntem prezenți în:"
+        adress = """<br><b>WHITEPRESS SRL</b><br>
+        str. Alexandru D. Xenopol nr. 30<br>
+        410229 Oradea<br>
+        România<br>
+        CIF: RO41419473 <br>"""
+        policy = """Acest mesaj poate conține informații confidențiale și este destinat doar persoanei în cauză. Dacă nu sunteți dumneavoastră persoana căreia i se adresează mesajul de mai sus, nu puteți dezvălui, copia sau utiliza în alt scop acest mesaj. Vă rugăm să anunțați de îndată expeditorul cu privire la orice mesaj care a ajuns din greșală la dvs. și să-l ștergeți.
+    Expeditorul nu este responsabil pentru eventualele erori sau neînțelegeri din acest mesaj rezultate din posibile interceptări, pierderi, distrugere a datelor, întârzieri sau transmisii incomplete și prezența virușilor. În caz că aveți bănuieli, vă rugăm să contactați expeditorul.
+    Informațiile personale incluse în aceast mesaj sunt prelucrate de WhitePress S.R.L, al cărui sediu este în Oradea, str. Alexandru D. Xenopol nr. 30. Informațiile personale sunt procesate în conformitate cu Politica de confidențialitate, disponibilă la: https://www.whitepress.com/ro/privacy-policy
+    """
+        break
+    elif language == "6":
+        greet = "Met vriendelijke groet"
+        http_domain = '"https://www.whitepress.com/nl"'
+        domain = "whitepress.com/nl"
+        operate = "Wij zijn actief in:"
+        adress = """<br><b>WhitePress BV</b><br>
+        Keizersgracht 241<br>
+        1016 EA Amsterdam<br>
+        Nederland<br>
+        BTW-nummer: NL861473814B01 <br>"""
+        policy = """Dit bericht kan vertrouwelijke informatie bevatten en/of enkel bestemt zijn voor een specifieke geadresseerde. Als u niet de beoogde ontvanger van het bovenstaande bericht bent, mag u het niet openbaar maken, kopieren, verspreiden of anderszins delen of gebruiken. Bren de afzender onmiddelijk op de hoogte en verwijder het bericht.
+    De afzender is niet verantwoordelijk voor eventuele fouten of vervormingen in dit bericht als gevolg van mogelijke onderschepping, beschadiging, verlies, vernietiging van gegevens, vertragingen of onvolledige verzending en de aanwezigheid van virussen. Neem bij twijfel contact op met de afzender.
+    De persoonlijke informatie die in deze correspondentie is opgenomen, wordt verwerkt door WhitePress sp. z oo, waarvan het hoofdkantoor is gevestigd in Bielsko-Bia?a, Legion¨®w 26/28, 43-300 Bielsko-Bia?a. Persoonlijke informatie wordt verwerkt in overeenstemming met het privacybeleid, beschikbaar op:https://www.whitepress.com/privacy-policy."""
+        break
+    elif language == "7":
+        greet = "Un saludo"
+        http_domain = '"https://www.whitepress.com/es"'
+        domain = "whitepress.com/es"
+        operate = "Nosotros operamos en:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynsk¨˘ 27<br>
+        040 01 Ko?ice<br>
+        Slovakia<br>
+        NIF: 2121022321 <br>"""
+        policy = """Este mensaje puede contener información confidencial y/o dirigida solo a un destinatario específico y está destinado únicamente para el uso de la entidad o persona a quien va dirigido. Si usted no es el destinatario previsto del mensaje anterior, no puede divulgarlo, copiarlo, distribuirlo o compartirlo o usarlo de otra manera. Notifique al remitente de inmediato sobre cualquier mensaje con la dirección incorrecta y elimine el mensaje.
+    El remitente no se responsabiliza de los errores o distorsiones de este mensaje derivados de la posible interceptación, daño, pérdida, destrucción de datos, retrasos o transmisión incompleta y presencia de virus. En caso de duda, póngase en contacto con el remitente.
+    La información personal incluida en esta correspondencia es procesada por WhitePress sp. z o.o., cuya sede se encuentra en Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. La información personal se procesa de acuerdo con la Política de privacidad, disponible en: https://www.whitepress.com/privacy-policy."""
+        break
+
+    elif language == "8":
+        greet = "saygılarımla"
+        http_domain = '"https://www.whitepress.com/tr"'
+        domain = "whitepress.com/tr"
+        operate = "hizmet verdiğimiz ülkeler:"
+        adress = """<br><b>WHITEPRESS REKLAM TEKNOLOJİLERİ ANONİM ŞİRKETİ</b><br>
+        Caddebostan Mahallesi, Bağdat Caddesi, Özen Apartmanı, No:320, Daire: 6 Kadıköy<br>
+        34728 İstanbul<br>
+        Türkiye<br>
+        Vergi Numarası: 8111303596 <br>"""
+        policy = """Bu mesaj, gizli ve/veya yalnızca belirli bir alıcıya yönelik olan ve yalnızca gönderildiği kurum veya kişinin kullanımına yönelik bilgiler içerebilir. Yukarıdaki mesajın alıcısı değilseniz, bu mesajı ifşa edemez, kopyalayamaz, dağıtamaz, başka bir şekilde paylaşamaz veya kullanamazsınız. Lütfen yanlış gönderilmiş herhangi bir mesaj alırsanız, göndereni derhal bilgilendiriniz ve mesajı siliniz.
+    Gönderici, bu mesajdaki olası müdahale, hasar, kayıp, verilerin imhası, gecikmeler veya eksik iletim ve virüslerin varlığından kaynaklanan herhangi bir hata veya bozulmadan sorumlu değildir. Herhangi bir şüphe durumunda, lütfen göndericiyle iletişime geçiniz.
+    Bu yazışmada yer alan kişisel bilgiler Bielsko-Biała merkezli, Legionów 26/28, 43-300 Bielsko-Biała adresinde kayıtlı bulnan WhitePress sp. z o.o. şirketine aittir. Kişisel bilgiler, https://www.whitepress.com/privacy-policy adresinde bulunan Gizlilik Politikasına uygun olarak işlenir."""
+
+        break
+    elif language == "9":
+        greet = "Cordialement"
+        http_domain = '"https://www.whitepress.com/fr"'
+        domain = "whitepress.com/fr"
+        operate = "Nous sommes basés en:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynská 27<br>
+        040 01 Košice<br>
+        Slovaquie<br>
+        Numéro TVA Intracommunautaire: 2121022321<br>"""
+        policy = """Ce message peut contenir des informations confidentielles et/ou adressées uniquement à un destinataire spécifique et est destiné uniquement à l'usage de l'entité ou de la personne à laquelle il est adressé. Si vous n'êtes pas le destinataire du message ci-dessus, vous ne pouvez pas le divulguer, le copier, le distribuer ou le partager ou l'utiliser de toute autre manière. Veuillez informer immédiatement l'expéditeur de tout message mal adressé et supprimer le message.
+    L'expéditeur n'est pas responsable des erreurs ou déformations de ce message résultant d'une éventuelle interception, de dommages, de pertes, de destruction de données, de retards ou de transmissions incomplètes et de la présence de virus. En cas de doute, veuillez contacter l'expéditeur.
+    Les informations personnelles incluses dans cette correspondance sont traitées par WhitePress sp. z o.o., dont le siège est à Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. Les informations personnelles sont traitées conformément à la politique de confidentialité, disponible à l'adresse suivante: """
+
+        break
+    elif language == "10":
+        greet = "Üdvözlettel"
+        http_domain = '"https://www.whitepress.com/hu"'
+        domain = "whitepress.com/hu"
+        operate = "Jelen vagyunk:"
+        adress = """<br><b>WhitePress Kft</b><br>
+        Verebeshegy u. 11<br>
+        2161 Csomád<br>
+        Magyarország<br>
+        Adóazonosító szám: 26768142-2-13 <br>"""
+        policy = """Ez az üzenet bizalmas információkat tartalmazhat, és/vagy csak egy meghatározott címzettnek szól, ebből adódóan kizárólag a címzett személynek a felhasználására szolgál. Ha nem Ön a fenti üzenet címzettje, nem fedheti fel, másolhatja, terjesztheti vagy más módon nem oszthatja meg vagy használhatja fel annak tartalmát. Kérjük, haladéktalanul értesítse a feladót a rosszul címzett üzenetről, és törölje az üzenetet.
+    A feladó nem vállal felelősséget a jelen üzenetben előforduló hibákért vagy torzulásokért, amelyek az adatok esetleges elfogásából, sérüléséből, elvesztéséből, megsemmisüléséből, késésekből vagy hiányos átvitelből, valamint vírusok jelenlétéből erednek. Bármilyen kétség esetén forduljon a feladóhoz.
+    A jelen levelezésben szereplő személyes adatokat a WhitePress sp. z o.o., székhelye Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała kezeli. A személyes adatok feldolgozása a rendelkezésre álló adatvédelmi szabályzatnak megfelelően történik https://www.whitepress.com/hu/privacy-policy"""
+        break
+    elif language == "11":
+        greet = "Cordiali saluti"
+        http_domain = '"https://www.whitepress.com/It"'
+        domain = "whitepress.com/It"
+        operate = "Operiamo in:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynská 27<br>
+        040 01 Košice<br>
+        Slovacchia<br>
+        P.IVA: 2121022321 <br>"""
+        policy = """Questo messaggio può contenere informazioni di carattere confidenziale e/o potrebbe essere rivolto esclusivamente al destinatario per il cui uso è stato inviato. La diffusione, la distribuzione, la copia e/o l’uso del suo contenuto da parte di terzi sono severamente vietate. Se avete ricevuto la presente e-mail per errore Vi chiediamo di informarci e di distruggere immediatamente il messaggio.
+    Il mittente non potrà essere ritenuto in alcun modo responsabile per eventuali errori o danni derivanti da intercettazione, danneggiamento, perdita, distruzione dei dati, ritardi, trasmissioni incomplete o presenza di virus. Per qualsiasi dubbio, Vi invitiamo a contattare il mittente.
+    I dati personali presenti in questa mail vengono trattati da WhitePress sp. z o.o., con sede a Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała, in conformità con l’informativa sulla privacy, disponibile al sito https://www.whitepress.com/privacy-policy."""
+
+        break
+    elif language == "13":
+        greet = "S pozdravom"
+        http_domain = '"https://www.whitepress.com/sk"'
+        domain = "whitepress.com/sk"
+        operate = "Pôsobíme v:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynská 27<br>
+        040 01 Košice<br>
+        Slovensko<br>
+        DIČ: 2121022321 <br>"""
+        policy = """Táto správa môže obsahovať informácie, ktoré sú dôverné a/alebo určené len konkrétnemu adresátovi a sú určené výlučne pre potreby subjektu alebo osoby, ktorej sú určené. Ak nie ste adresátom uvedenej správy, nesmiete ju zverejňovať, kopírovať, distribuovať ani inak zdieľať či používať. O akejkoľvek nesprávne adresovanej správe okamžite informujte odosielateľa a správu vymažte.
+    Odosielateľ nezodpovedá za žiadne chyby alebo skreslenia v tejto správe, ktoré sú dôsledkom možného zachytenia, poškodenia, straty, zničenia údajov, oneskoreného alebo neúplného prenosu a prítomnosti vírusov. V prípade akýchkoľvek pochybností sa obráťte na odosielateľa.
+    Osobné údaje obsiahnuté v tejto korešpondencii spracúva spoločnosť WhitePress s.r.o., ktorej sídlo je v Košiciach, ul. Mlynská 27, 040 01, Košice. Osobné údaje sa spracúvajú v súlade so Zásadami ochrany osobných údajov, ktoré sú k dispozícii na: https://www.whitepress.com/privacy-policy."""
+        break
+    elif language == "14":
+        greet = "С най-добри пожелания"
+        http_domain = '"https://www.whitepress.com/bg"'
+        domain = "whitepress.com/bg"
+        operate = "Работим в:"
+        adress = """<br><b>Пъблиш 360 ЕООД</b><br>
+        Бул. Княз Александър Дондуков 82<br>
+        1504 Cофия<br>
+        България<br>
+        Ид.№: 201636341<br>"""
+        policy = """Това съобщение може да съдържа информация, която е поверителна и/или насочена само към конкретен адресат и е предназначена единствено за използване от субекта или лицето, към което е адресирано. Ако не сте конкретният получател на горното съобщение, не можете да го разкривате, копирате, разпространявате или да го споделяте или използвате по друг начин. Моля, уведомете незабавно подателя за всяко съобщение с объркан адрес и изтрийте съобщението.
+    Подателят не носи отговорност за грешки или неточности в това съобщение, произтичащи от възможно прихващане, повреда, загуба, унищожаване на данни, забавяне или непълно предаване на данни и наличие на вируси. В случай на съмнение от ваша страна, моля свържете се с подателя.
+    Личната информация, включена в тази кореспонденция, се обработва от WhitePress sp. z o.o., чието седалище е в Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. Личната информация се обработва в съответствие с Политиката за поверителност, достъпна на: https://www.whitepress.com/privacy-policy.
+    """
+
+        break
+
+
+
+    elif language == "15":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com"'
+        domain = "whitepress.com"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress sp. z o.o.</b><br>
+        43-300 Bielsko-Bia?a<br>
+        ul. Legion¨®w 26/28<br>
+        Poland<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Bia?a, Legion¨®w 26/28, 43-300 Bielsko-Bia?a. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy."""
+        break
+
+    elif language == "16":
+        greet = "Lijepi pozdrav"
+        http_domain = '"https://www.whitepress.com/hr"'
+        domain = "whitepress.com/hr"
+        operate = "Radimo u:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynska 27<br>
+        040 01 Kosice<br>
+        Slovakia<br>
+        OIB: 2121022321<br>"""
+        policy = """Ova poruka može sadržavati informacije koje su povjerljive i/ili usmjerene samo na određenog primatelja i namijenjene isključivo za korištenje subjektu ili osobi kojoj je upućena. Ako niste željeni primatelj gornje poruke, ne smijete je otkriti, kopirati, distribuirati ili na drugi način dijeliti ili koristiti. Molimo vas da odmah obavijestite pošiljatelja o svakoj pogrešno adresiranoj poruci i izbrišite poruku.
+    Pošiljatelj nije odgovoran za bilo kakve pogreške ili izobličenja u ovoj poruci koja su posljedica mogućeg presretanja, oštećenja, gubitka, uništenja podataka, kašnjenja ili nepotpunog prijenosa te prisutnosti virusa. U slučaju bilo kakve sumnje obratite se pošiljatelju.
+    Osobne podatke uključene u ovu korespondenciju obrađuje WhitePress sp.z o.o., čije je sjedište u Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. Osobni podaci obrađuju se u skladu s Politikom privatnosti, dostupnim na: https://www.whitepress.com/privacy-policy.
+    """
+        break
+    elif language == "17":
+        greet = "Melhores Cumprimentos"
+        http_domain = '"https://www.whitepress.com/pt"'
+        domain = "whitepress.com/pt"
+        operate = "Nós estamos em:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynská 27<br>
+        040 01 Košice<br>
+        Slovakia<br>
+        NIF: 2121022321<br>"""
+        policy = """Esta mensagem pode conter informações confidenciais e/ou dirigidas apenas a um destinatário específico e destina-se exclusivamente à utilização da entidade ou pessoa a quem é dirigida. Se não for o destinatário pretendido da mensagem acima referida, não poderá divulgá-la, copiá-la, distribuí-la, partilhá-la ou utilizá-la de qualquer outra forma. É favor notificar imediatamente o remetente de qualquer mensagem mal endereçada e apagar a mensagem.
+    O remetente não é responsável por quaisquer erros ou distorções nesta mensagem resultantes de possíveis interceções, danos, perda, destruição de dados, atrasos ou transmissão incompleta e da presença de vírus. Em caso de dúvida, queira contactar o remetente.
+    As informações pessoais incluídas nesta correspondência são processadas pela WhitePress sp. z o.o., cuja sede se encontra em Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. As informações pessoais são processadas de acordo com a Política de Privacidade, disponível em: https://www.whitepress.com/privacy-policy."""
+        break
+
+    elif language == "18":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com/en"'
+        domain = "whitepress.com/en"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress Publishing LTD</b><br>
+        590 Kingston Road<br>
+        SW20 8DN London<br>
+        England<br>
+        NBRN: 12339845<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Bia?a, Legion¨®w 26/28, 43-300 Bielsko-Bia?a. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy."""
+        break
+
+    elif language == "19":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com/en"'
+        domain = "whitepress.com/en"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress Publishing LTD</b><br>
+        590 Kingston Road<br>
+        SW20 8DN London<br>
+        England<br>
+        NBRN: 12339845<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Bia?a, Legion¨®w 26/28, 43-300 Bielsko-Bia?a. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy."""
+        break
+    elif language == "20":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com/en"'
+        domain = "whitepress.com/en"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress Publishing LTD</b><br>
+        590 Kingston Road<br>
+        SW20 8DN London<br>
+        England<br>
+        NBRN: 12339845<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Bia?a, Legion¨®w 26/28, 43-300 Bielsko-Bia?a. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy."""
+        break
+    elif language == "21":
+        greet = " Με εκτίμηση"
+        http_domain = '"https://www.whitepress.com/gr"'
+        domain = "whitepress.com/gr"
+        operate = " Με εκτίμηση:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynská 27<br>
+        040 01 Košice<br>
+        Σλοβακία<br>
+        ΑΦΜ:2121022321<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Bia?a, Legion¨®w 26/28, 43-300 Bielsko-Bia?a. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy."""
+
+        break
+    elif language == "22":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com/en"'
+        domain = "whitepress.com/en"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress Publishing LTD</b><br>
+        590 Kingston Road<br>
+        SW20 8DN London<br>
+        England<br>
+        NBRN: 12339845<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy."""
+        break
+    elif language == "23":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com/"'
+        domain = "whitepress.com"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress Publishing LTD</b><br>
+        590 Kingston Road<br>
+        SW20 8DN London<br>
+        England<br>
+        NBRN: 12339845<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy.
+
+    """
+        break
+    elif language == "24":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com/"'
+        domain = "whitepress.com"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress s.r.o.</b><br>
+        Mlynská 27<br>
+        040 01 Košice<br>
+        Slovakia<br>
+        NBRN:2121022321 <br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy.
+
+    """
+        break
+    elif language == "25":
+        greet = "Best Regards"
+        http_domain = '"https://www.whitepress.com/"'
+        domain = "whitepress.com"
+        operate = "We Operate in:"
+        adress = """<br><b>WhitePress sp. z o.o.</b><br>
+            43-300 Bielsko-Biala<br>
+            ul. Legionow 26/28<br>
+            Poland<br>
+            NIP: 937-266-77-97<br>"""
+        policy = """This message may contain information that is confidential and/or directed only to a specific addressee and is intended solely for the use of the entity or person to whom it is addressed. If you are not the intended recipient of the above message, you may not disclose, copy, distribute, or otherwise share or use it. Please notify the sender immediately of any misaddressed message and delete the message.
+    The sender is not responsible for any errors or distortions in this message resulting from possible interception, damage, loss, destruction of data, delays or incomplete transmission and the presence of viruses. In case of any doubt, please contact the sender.
+    Personal information included in this correspondence is processed by WhitePress sp. z o.o., whose headquarters are in Bielsko-Biała, Legionów 26/28, 43-300 Bielsko-Biała. Personal information is processed in accordance with the Privacy Policy, available at: https://www.whitepress.com/privacy-policy.
+
+    """
+        break
+
+    else:
+        language = input("You need to specify the number of the country!: ")
+f = open(name_and_surname + ".html", "w", encoding="UTF-8")
+
+message = """
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><div style="font-size:14px; line-height:1.25; font-family: &#39;Open Sans&#39;, Arial, Helvetica, sans-serif;">
+	<br>
+	""" + greet + """,
+	<br>
+	<br>
+	<b>""" + name_and_surname + """</b><br>
+	""" + position + """<br><br>
+	""" + telno + """<br>
+	<a href=""" + email + """>""" + email + """</a><br>
+	<a href=""" + http_domain + """ target="_blank">""" + domain + """</a><br>
+	<div style="padding-bottom: 1px;"></div>
+
+
+	<a href="https://www.linkedin.com/company/whitepress" target="_blank">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAPxQTFRFI3KeF2ubF2ucGm+bDmmYDmiXGm+cD2mYDmmXDmiaF22bVpa4MH2nYJm4/f781eXrEWmYPoSq3Ortl73ODmiYHnGeRYiwNn+pEmqaPISrPIOrGG2dVJO3WJe4FWmaX5u8//7/0+LqInKf/f7+/v78zt/o///+vdTiInShD2mXX5y8////0+PrIHGe/v/9r8zbe6rG8PX3Zp69//79MX6nDmeWutTgf7DJIXKfLHulss/cgbLJInKg/v7/X5u70uPqI3Sh/f39//38LHqlDmiWss7b/v79gbHJH3GePIWrNICnEmmaPYWrPYWtE2yaLnykPYWsJXahD2mZD2iYUVt8AgAAAJ1JREFUeJxjYGDEAEwMzCwYgJWBjZ0DHcAEObEIcnHzYAry8vELoAuyCAoJi4D5LEiComLiEpJS0jKyciJwQXZ5BUUlZRVVNTV1DU24oJa2jq6ynr6BobIRB6qgsYmpmbY5C7KghbKxJauVtjWKoI0tmiCLnbG9g6OTs4urmztC0MPTy9vH18/FPyCQBeF3qLNRAwRrKBElGIQR8sEAM0sZlg1SEQwAAAAASUVORK5CYII="></a>
+	<a href="https://www.facebook.com/WhitePress" target="_blank"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAAAAXNSR0IB2cksfwAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAJxQTFRFT2+wTW2uS2+uSWuuSWqvSGqvSWuvSGqwe5PDsL7btsTenbDSSWqubIW89/j5////1d7sR2mulajP+/v8zNXlqr3bSGmuR2qtl6rQ5urySGquR2qum67R4efvytTno7XUR2uuvMjf//7/r7zYgJjHydTn8PP2o7LVcIm+mKvQ5erwSGuumKvRjKHK5OjyztfnR2iuS2yvTm6wTGyvROkxowAAAH5JREFUeJxjYGDEAEwMzCwYgJWBDb8gOysruiAzBycXNw+aIC8fP78AmqCgEL+wiKgYqqC4BL+kmBSqmdIysvx8cvKoggqK/Pz8SsqoglIqqvxq6hpSqGYya/JribGjuVNbB2gRuo9IENTV0zfACBBDI2NsocRCQFBbCgNIAwChYA6KtoyGDwAAAABJRU5ErkJggg=="></a>
+
+</div>
+<br>
+<div style="margin: -3px 0 -3px 0">
+	<img alt="WhitePress.com" width="183" height="34" border="0" src="data:image/png;base64,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">
+</div>
+
+<div style="margin: 5px 0 5px 0;"><span style="font-size:14px; font-family: &#39;Open Sans&#39;, Arial, Helvetica, sans-serif; vertical-align:top;">""" + operate + """:</span><br>
+<img width="1105" height="39" src="https://whitepress.com/userfiles/_CMS_/wp_flags.png"<br>
+<br>
+
+<div
+<span style="font-size:14px; line-height:1.25; font-family: &#39;Open Sans&#39;, Arial, Helvetica, sans-serif;">
+	""" + adress + """
+	<br></div>
+	<div style="max-width: 1200px; margin-bottom: 20px;">
+		<span style="font-size:10px; font-family: &#39;Open Sans&#39;, Arial, Helvetica, sans-serif;">
+			""" + policy + """</a> .
+			<br>
+		</span>
+	</div>
+</span></body></html>
+"""
+message = str(message)
+f.write(message)
+f.close()
+webbrowser.open_new_tab(name_and_surname + ".html")
